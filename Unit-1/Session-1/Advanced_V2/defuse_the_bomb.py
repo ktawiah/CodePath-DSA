@@ -10,3 +10,41 @@ As code is circular, the next element of code[n-1] is code[0], and the previous 
 
 Given the circular array code and an integer key k, write a function decrypt() that returns the decrypted code to defuse the bomb!
 """
+
+
+def defuse(code, k):
+    if k == 0:
+        return [0] * len(code)
+    index = 0
+    result = []
+
+    while index < len(code):
+
+        if k < 0:
+            sum_k = 0
+            for i in range((index + k), index):
+                sum_k += code[i % len(code)]
+            result.append(sum_k)
+
+        if k > 0:
+            sum_k = 0
+            for i in range(index + 1, index + k + 1, 1):
+                sum_k += code[i % len(code)]
+            result.append(sum_k)
+
+        index += 1
+
+    return result
+
+
+code = [5, 7, 1, 4]
+k = 3
+print(defuse(code, k))
+
+code = [1, 2, 3, 4]
+k = 0
+print(defuse(code, k))
+
+code = [2, 4, 9, 3]
+k = -2
+print(defuse(code, k))
