@@ -14,7 +14,7 @@ def insert_interval(intervals, new_interval):
     index = 0
 
     while index < len(intervals) - 1:
-        if intervals[index][0] <= new_interval[0] <= intervals[index + 1][0]:
+        if new_interval[0] < intervals[index + 1][0]:
             intervals.insert(index + 1, new_interval)
             break
 
