@@ -1,6 +1,11 @@
+"""
+Write a function running_sum() that accepts a list of integers superhero_stats representing the number of crimes Batman has stopped each month in Gotham City. The function should modify the list to return the running sum such that superhero_stats[i] = sum(superhero_stats[0]...superhero_stats[i]). You must modify the list in place; you may not create any new lists as part of your solution.
+"""
+
+
 def running_sum(superhero_stats):
     """
-    P: Return a list of cumulative sums in superhero stats list
+    P: Replace elements in list by sum of previous element and itself
 
     [1,2,3] -> [1,3,6]
     [0,2,3] -> [0,2,5]

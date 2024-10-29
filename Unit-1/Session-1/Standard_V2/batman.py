@@ -1,3 +1,8 @@
+"""
+Write a function batman() that prints the string "I am vengeance. I am the night. I am Batman!".
+"""
+
+
 def batman():
     """
     P: Print out given string

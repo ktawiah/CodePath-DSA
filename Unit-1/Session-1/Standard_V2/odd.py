@@ -1,3 +1,8 @@
+"""
+Write a function get_odds() that takes in a list of integers nums and returns a new list containing all the odd numbers in nums.
+"""
+
+
 def get_odds(nums):
     """
     P: Return a list of all odd numbers in nums
@@ -11,13 +16,16 @@ def get_odds(nums):
     3. Add to odd_nums if element is odd else do nothing
     4. Return odd_nums
     """
-    odd_nums = []
+    # odd_nums = []
 
-    for num in nums:
-        if num % 2 == 1:
-            odd_nums.append(num)
+    # for num in nums:
+    #     if num % 2 == 1:
+    #         odd_nums.append(num)
 
-    return odd_nums
+    # return odd_nums
+
+    # Can be rewritten using list comprehension as:
+    return [num for num in nums if num % 2 == 1]
 
 
 if __name__ == "__main__":

@@ -1,6 +1,11 @@
+"""
+Rabbit is very particular about his belongings and wants to own an even number of each thing he owns. Write a function can_pair() that accepts a list of integers item_quantities. Return True if each number in item_quantities is even. Return False otherwise.
+"""
+
+
 def can_pair(item_quantities):
     """
-    P: Check if all quantities in item_quanties is even
+    P: Check if all quantities in item_quanties are even
 
     [1,2,3] -> False
     [2,4] -> True

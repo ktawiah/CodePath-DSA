@@ -1,56 +1,42 @@
+"""
+Christopher Robin set up a scavenger hunt for Pooh, but it's a blustery day and several hidden clues have blown away. Write a function find_missing_clues() to help Christopher Robin figure out which clues he needs to remake. The function accepts two integers lower and upper and a unique integer array clues. All elements in clues are within the inclusive range [lower, upper].
+
+A clue x is considered missing if x is in the range [lower, upper] and x is not in clues.
+
+Return the shortest sorted list of ranges that exactly covers all the missing numbers. That is, no element of clues is included in any of the ranges, and each missing number is covered by one of the ranges.
+"""
+
+
 def find_missing_clues(clues, lower, upper):
     """
     P: Create a list of all the ranges in of values missing in the clues
-
-    S: 1. Convert clues to set
-    2. Create result list, current range list
-    2. Loop from lower to upper
-    2. while num is not in clues set:
-      add num to current range list
-      While range set is not empty:
-        - add current value - 1
-        - append to result set
-        - empty list
-    4. Return result list
     """
-    pass
-    # clues_set = set(clues)
+    # Create set of clues
+    clues_set = set(clues)
 
-    # results = []
-    # curr_range = []
+    # Create result list
+    result = []
 
-    # if len(clues) <= 1:
-    #     return clues[0]
+    # Iterate through clues
+    index = lower
+    while index < upper + 1:
 
-    # if lower not in clues_set:
-    #     curr_range.append(clues[0])
+        # Update result list
+        if index not in clues_set:
+            if not result or len(result[-1]) == 2:
+                result.append([index])
 
-    # print(curr_range)
+            while len(result[-1]) == 1:
+                if index in clues_set:
+                    result[-1].append(index - 1)
+                elif index == upper:
+                    result[-1].append(upper)
+                index += 1
 
-    # all_clues = list(range(lower, upper + 1))
+        index += 1
 
-    # # print(all_clues[1:])
-
-    # # for clue in all_clues:
-    # #     if clue not in clues_set and len(curr_range) == 0:
-    # #         curr_range.append(clue)
-
-    # #     if (
-    # #         clue not in clues_set
-    # #         and len(curr_range) == 1
-    # #         and clues[clues.index(clue + 1)] in clues_set
-    # #     ):
-    # #         curr_range.append(clue)
-    # #         results.append(curr_range)
-    # #         curr_range.clear()
-
-    # for index in range(lower, upper+1):
-    #     if index not in clues_set and len(curr_range) == 0:
-    #         curr_range.append(index)
-
-    #     if
-
-    # return results
+    # Return result list
+    return result
 
 
 clues = [0, 1, 3, 50, 75]

@@ -1,3 +1,8 @@
+"""
+Signs in the Hundred Acre Wood have been losing letters as Tigger bounces around stealing any letters he needs to spell out his name. Write a function tiggerfy() that accepts a string s, and returns a new string with the letters t, i, g, e, and r from it.
+"""
+
+
 def tiggerfy(s):
     """
     P: Return s excluding letters composing tiger
@@ -15,17 +20,24 @@ def tiggerfy(s):
 
     T.C: O(n)
     """
-    s_list = s.split()
+    s_list = list(s)
     t_set = set("tiger")
 
-    for index, char in enumerate(s_list):
-        if char in t_set:
+    # for index, char in enumerate(s_list):
+    #     if char in t_set:
+    #         s_list.pop(index)
+
+    index = 0
+    while index < len(s_list):
+        if s_list[index] in t_set:
             s_list.pop(index)
+        else:
+            index += 1
 
     return "".join(s_list)
 
 
 if __name__ == "__main__":
-    print(tiggerfy("suspcous"))
+    print(tiggerfy("suspicious"))
     print(tiggerfy(""))
     print(tiggerfy("Hunny"))

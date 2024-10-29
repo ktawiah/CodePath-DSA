@@ -1,3 +1,8 @@
+"""
+Write a function nanana_batman() that accepts an integer x and prints the string "nanana batman!" where "na" is repeated x times. Do not use the * operator.
+"""
+
+
 def nanana_batman(x):
     """
     P: Return a string with recurrent 'na' x number of times
@@ -12,13 +17,16 @@ def nanana_batman(x):
     4. Append new_string with ' batman'
     5. Return result_string
     """
-    new_string = ""
-    while x != 0:
-        new_string += "na"
-        x -= 1
+    # new_string = ""
+    # while x != 0:
+    #     new_string += "na"
+    #     x -= 1
 
-    new_string += " batman"
-    return new_string.strip()
+    # new_string += " batman"
+    # return new_string.strip()
+
+    # Rewritten
+    return "na" * x + " batman"
 
 
 if __name__ == "__main__":

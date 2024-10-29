@@ -1,3 +1,8 @@
+"""
+Implement a function get_last() that accepts a list of items items and returns the last item in the list. If the list is empty, return None.
+"""
+
+
 def get_last(items):
     """
     P: Returns last element in list else None
@@ -6,10 +11,12 @@ def get_last(items):
     [] -> None
     [1] -> 1
     """
-    if len(items) == 0:
-        return None
-    else:
-        return items[-1]
+    # if len(items) == 0:
+    #     return None
+    # else:
+    #     return items[-1]
+
+    return items.pop() if len(items) != 0 else None
 
 
 if __name__ == "__main__":

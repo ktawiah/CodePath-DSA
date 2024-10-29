@@ -1,3 +1,8 @@
+"""
+Write a function a function up_and_down() that accepts a list of integers lst as a parameter. The function should return the number of odd numbers minus the number of even numbers in the list.
+"""
+
+
 def up_and_down(lst):
     """
     P: Find the difference between the number of odd numbers and even numbers in lst

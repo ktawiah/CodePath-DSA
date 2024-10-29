@@ -1,3 +1,8 @@
+"""
+Write a function squared() that accepts a list of integers numbers as a parameter and squares each item in the list. Return the squared list.
+"""
+
+
 def squared(numbers):
     """
     P: Return numbers with all its elements squared
@@ -13,14 +18,16 @@ def squared(numbers):
     4. Replace current number with placeholder value and reset square_value
     5. Return numbers
     """
-    square_value = 1
+    # square_value = 1
 
-    for index, num in enumerate(numbers):
-        square_value = num**2
-        numbers[index] = square_value
-        square_value = 1
+    # for index, num in enumerate(numbers):
+    #     square_value = num**2
+    #     numbers[index] = square_value
+    #     square_value = 1
 
-    return numbers
+    # return numbers
+
+    return [num**2 for num in numbers]
 
 
 if __name__ == "__main__":
