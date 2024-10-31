@@ -10,26 +10,33 @@ Notice that you may not slant the container.
 
 
 def most_honey(height):
-    # Create volume placeholder
-    # For each pair check if max volume
-    # If max store indices
-    # Return square of min index
+    # Create a placeholder for max area
+    max_area = 0
 
-    max_volume = 0
+    # Create two pointers
+    left, right = 0, len(height) - 1
 
-    for idx1, num1 in enumerate(height):
-        for idx2, num2 in enumerate(height):
-            # print(idx1, idx2, (idx2 - idx1) * min(num1, num2))
-            if (idx2 - idx1) * min(num1, num2) > max_volume:
-                max_volume = (idx2 - idx1) * min(num1, num2)
-                height1 = idx1
-                height2 = idx2
+    # Iterate through heights
+    while left < right:
 
-    print(min(height[height1], height[height2]) ** 2)
+        # Get current height
+        curr_area = min(height[left], height[right]) * (right - left)
+
+        # Update max height
+        max_area = max(curr_area, max_area)
+
+        # Update pointers
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+
+    # Return max area
+    return max_area
 
 
 height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
-most_honey(height)
+print(most_honey(height))
 
 height = [1, 1]
-most_honey(height)
+print(most_honey(height))
