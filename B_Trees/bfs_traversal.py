@@ -2,10 +2,10 @@ from collections import deque
 
 
 class Node:
-    def __init__(self, val):
+    def __init__(self, val, left=None, right=None):
         self.val = val
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
 
 
 def traverse_breath_first(root):
@@ -13,16 +13,12 @@ def traverse_breath_first(root):
     if root is None:
         return result
 
-    queue = deque()
-    queue.append(root)
-    visited = set()
+    queue = deque([root])
 
     while queue:
         current_node = queue.popleft()
 
-        if current_node not in visited:
-            visited.add(current_node)
-            result.append(current_node.val)
+        result.append(current_node.val)
 
         if current_node.left:
             queue.append(current_node.left)
@@ -44,10 +40,13 @@ def traverse_breath_first(root):
 # b.left, b.right = d, e
 # c.right = f
 
-root = Node(1)
-root.left = Node(2)
-root.right = Node(1)
-root.left.left = Node(2)
-root.left.right = Node(3)
+# root = Node(1)
+# root.left = Node(2)
+# root.right = Node(1)
+# root.left.left = Node(2)
+# root.left.right = Node(3)
 
-print(traverse_breath_first(root))
+tree = Node(1, Node(2, Node(4), Node(5)), Node(3, None, Node(6)))
+
+
+print(traverse_breath_first(tree))

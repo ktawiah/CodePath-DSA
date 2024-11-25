@@ -9,7 +9,7 @@ def binary_search_left(nums, target):
         else:
             right = mid - 1
 
-    return (right, nums[right])
+    return right
 
 
 print(binary_search_left([1, 2, 2, 2, 3, 4, 5, 7], 2))
