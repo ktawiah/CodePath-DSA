@@ -1,4 +1,4 @@
-"""You want to make sure your posts are clean and professional. Given a string post of lowercase and uppercase English letters, you want to remove any pairs of adjacent characters where one is the lowercase version of a letter and the other is the uppercase version of the same letter. Keep removing such pairs until the post is clean.
+"""You want to make sure your posts are clean and professional. Given a string post of lowercase and uppercase English letters, you want to remove any pairs of ***adjacent characters where one is the lowercase version of a letter and the other is the uppercase version of the same letter. Keep removing such pairs until the post is clean.
 
 A clean post does not have two adjacent characters post[i] and post[i + 1] where:
 
@@ -6,6 +6,18 @@ post[i] is a lowercase letter and post[i + 1] is the same letter in uppercase or
 Return the clean post.
 
 Note that an empty string is also considered clean."""
+
+
+def clean_all_post(post):
+    stack = []
+
+    for char in post:
+        if stack and stack[-1].lower() == char.lower() and stack[-1] != char:
+            stack.pop()
+        else:
+            stack.append(char)
+
+    return "".join(stack)
 
 
 def clean_post_alt(post):
@@ -48,6 +60,8 @@ def clean_post(post):
     return "".join(post_list)
 
 
-print(clean_post("poOost"))
-print(clean_post("abBAcC"))
-print(clean_post("s"))
+print(clean_post("poOost"))  # post
+print(clean_post("abBAcC"))  # ""
+print(clean_post("s"))  # s
+
+print(clean_all_post("poOoSt"))

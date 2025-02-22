@@ -47,5 +47,31 @@ def engagement_boost(engagements):
     # return result
 
 
+# A list arranged in none decreasing order means that the largest values are located at the ends when the list contains negative values
+
+
+def engagement_boost_1(nums):
+    start, end = 0, len(nums) - 1
+
+    result = [0] * len(nums)
+    pos = len(result) - 1
+
+    while start < end:
+
+        if abs(nums[start]) > nums[end]:
+            l_num = (nums[start]) ** 2
+            start += 1
+        else:
+            l_num = nums[end] ** 2
+            end -= 1
+
+        result[pos] = l_num
+        pos -= 1
+
+    nums[:] = result
+    del result
+    return nums
+
+
 print(engagement_boost([-4, -1, 0, 3, 10]))
 print(engagement_boost([-7, -3, 2, 3, 11]))

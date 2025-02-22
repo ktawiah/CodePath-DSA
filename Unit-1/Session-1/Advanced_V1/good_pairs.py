@@ -14,7 +14,7 @@ def good_pairs(pile1, pile2, k):
     for stick2 in pile2:
         for stick1 in pile1:
             # print(stick2, stick1)
-            if stick1 % (stick2 * k) == 0:
+            if stick1 % (stick2 + k) == 0:
                 count += 1
 
     print(count)

@@ -9,7 +9,7 @@ def get_combinations(lst):
         # Iterate through the remaining elements in lst starting from 'start'
         for i in range(start, len(lst)):
             # Push the next state onto the stack: next index and updated path
-            stack.append((path + [lst[i]], i + 1))
+            stack.append((path[:] + [lst[i]], i + 1))
 
     return result  # Exclude the empty set
 

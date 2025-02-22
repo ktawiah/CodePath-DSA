@@ -6,8 +6,29 @@ Remove the show with the smallest view count, min_view_count, and the show with 
 Add (min_view_count + max_view_count) / 2 to the list of average view counts average_views.
 Return the minimum element in average_views."""
 
+from collections import deque
+
 
 def minimum_average_view_count(view_counts):
+    # Sort view counts
+    view_counts.sort()
+
+    # Create a placeholder for avg min views
+    min_avg_views = float("inf")
+
+    # Create a queue of view_counts
+    queue = deque(view_counts)
+
+    # Follow steps
+    while queue:
+        curr_avg = (queue.popleft() + queue.pop()) / 2
+        min_avg_views = min(min_avg_views, curr_avg)
+
+    # Return result
+    return min_avg_views
+
+
+def minimum_average_view_count_1(view_counts):
     view_counts.sort()
     # min_avg = float("inf")
     avg_views = []

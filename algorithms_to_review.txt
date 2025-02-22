@@ -1,0 +1,18 @@
+Learnt Algos and Patterns to review
+::FUN FACT -> Recursive solutions are just depth first solutions under the hood
+1. Prefix sum -> LC. 560
+2. When you notice a question asking for changes to be made to a list input or its output based on **consecutive values**, It mostly requires a stack DS
+3. Check for number of deviations to know if an array is sorted
+4. Sliding window algorithm for analyzing variables withing a variable or fixed window based on constraints -> Use a while loop to shrink your window until checking constraint is met
+NB:: Make time to learn SW comprehensively
+5. Kadane's algorithm 
+  - For finding largest length of consecutive values with sum up to a target
+  - Intuition: If at any point in the iteration process, an number reduces the curr sum to negative, reset curr sum else compare max at every point
+  - Pitfall to avoid: Check sum < 0 first before updating 
+6. Leaders in array: Nums greater than others to the right
+  - Consider last value as max, and iterate from the back while compare to max and updating it
+7. Sieve of eratosthenes: Finding count or vals of prime in a range
+  Intuition: For every value from 2 -> n//2, every multiple of that value is not a prime
+  - Approach: Create a list of boolean values with each val initially marked as prime(representing numbers from 2->n)
+  - Iterate through vals and set other other multiples to False
+  - Return sum of list(giving you the count of trues in python)
